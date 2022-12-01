@@ -1,0 +1,46 @@
+{
+  "name": "playwright-table",
+  "version": "1.0.0",
+  "description": "Collect tabular data from HTML Table Elements as object array or 2D string array",
+  "keywords": [
+    "playwright",
+    "table",
+    "tabular",
+    "scrap",
+    "crawl",
+    "header",
+    "json",
+    "csv",
+    "typescript",
+    "dom"
+  ],
+  "author": "Beeno Tung <aabbcc1241@yahoo.com.hk> (https://beeno-tung.surge.sh)",
+  "license": "BSD-2-Clause",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beenotung/playwright-table.git"
+  },
+  "homepage": "https://github.com/beenotung/playwright-table#readme",
+  "bugs": {
+    "url": "https://github.com/beenotung/playwright-table/issues"
+  },
+  "main": "collect-table.js",
+  "types": "collect-table.d.ts",
+  "files": [
+    "collect-table.js",
+    "collect-table.d.ts"
+  ],
+  "scripts": {
+    "test": "tsc --noEmit",
+    "build": "tsc -p ."
+  },
+  "dependencies": {
+    "playwright": "^1.28.1"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.9",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.9.3"
+  }
+}
