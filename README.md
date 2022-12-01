@@ -10,6 +10,32 @@ Collect tabular data from HTML Table Elements as object array or 2D string array
 npm install playwright-table
 ```
 
+## Usage Example
+
+```typescript
+import { collectTableWithHeaders } from 'playwright-table'
+import { firefox } from 'playwright'
+
+async function main() {
+  let browser = await firefox.launch()
+  let page = await browser.newPage()
+  await page.goto(
+    'https://en.wikipedia.org/wiki/List_of_airports_by_IATA_airport_code:_A',
+  )
+  await page.waitForSelector('.wikitable')
+  let rows = await collectTableWithHeaders({
+    page,
+    selector: '.wikitable',
+  })
+  console.log(rows)
+  await page.close()
+  await browser.close()
+}
+main()
+```
+
+Details refere to [example/main.ts](./example/main.ts)
+
 ## Typescript Signature
 
 ```typescript
