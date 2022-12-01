@@ -1,6 +1,6 @@
 {
   "name": "playwright-table",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Collect tabular data from HTML Table Elements as object array or 2D string array",
   "keywords": [
     "playwright",
