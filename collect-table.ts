@@ -33,6 +33,18 @@ export function collectAllTableWithHeaders<Key extends string = string>(input: {
           table.tHead?.rows[0].cells || [],
           cell => cell.innerText as Key,
         )
+        if (headers.length === 0) {
+          loop_tbody: for (let tBody of table.tBodies) {
+            for (let row of tBody.rows) {
+              for (let cell of row.cells) {
+                if (cell.tagName == 'TH') {
+                  headers.push(cell.innerText as Key)
+                }
+              }
+              if (headers.length > 0) break loop_tbody
+            }
+          }
+        }
         if (headers.length === 0) continue
         let dicts: Record<Key, string>[] = []
         for (let tBody of table.tBodies) {
